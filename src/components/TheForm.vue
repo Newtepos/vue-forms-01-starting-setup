@@ -1,6 +1,9 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-control" :class="{'invalid': userNameValidity === 'invalid'}">
+    <div
+      class="form-control"
+      :class="{ invalid: userNameValidity === 'invalid' }"
+    >
       <label for="user-name">Your Name</label>
       <input
         id="user-name"
@@ -90,6 +93,9 @@
       </div>
     </div>
     <div class="form-control">
+      <rating-control></rating-control>
+    </div>
+    <div class="form-control">
       <input
         type="checkbox"
         id="confirm-terms"
@@ -105,7 +111,12 @@
 </template>
 
 <script>
+import RatingControl from './RatingControl.vue'
+
 export default {
+  components: {
+    RatingControl
+  },
   data() {
     return {
       nameInput: '',
