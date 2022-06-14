@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="form-control">
-      <rating-control></rating-control>
+      <rating-control v-model="rating"></rating-control>
     </div>
     <div class="form-control">
       <input
@@ -125,6 +125,7 @@ export default {
       interest: [],
       how: null,
       confirm: false,
+      rating: null,
       userNameValidity: 'pending',
     };
   },
@@ -136,12 +137,14 @@ export default {
       console.log(this.interest);
       console.log(this.how);
       console.log(this.confirm);
+      console.log(this.rating);
       this.nameInput = '';
       this.ageInput = null;
       this.referrer = 'wom';
       this.interest = [];
       this.how = null;
       this.confirm = false;
+      this.rating = null;
     },
     validateInput() {
       if (this.nameInput === '') {
